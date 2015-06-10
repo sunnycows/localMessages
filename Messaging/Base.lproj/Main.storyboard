@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2H7-MQ-gsy">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nkK-ig-oeQ">
+            <objects>
+                <navigationController id="2H7-MQ-gsy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HbP-qb-Nsk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="INh-s6-sPA" kind="relationship" relationship="rootViewController" id="Iz5-Xz-Xll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7y-15-pc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="407"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bkL-3B-lFR">
+            <objects>
+                <viewController id="INh-s6-sPA" customClass="ViewController" customModule="Messaging" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u5U-VS-Itr"/>
+                        <viewControllerLayoutGuide type="bottom" id="pdI-QC-7sb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="itV-mo-bVc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EPN-GT-At2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="INh-s6-sPA" id="cVR-f2-mjQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="aWG-5c-7Wx" appends="YES" id="CMR-zi-Mzk"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkn-eM-rEg">
+                                <rect key="frame" x="4" y="566" width="552" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="INh-s6-sPA" id="Ahh-Rq-dZg"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6p-rA-1s1">
+                                <rect key="frame" x="560" y="564" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="INh-s6-sPA" eventType="touchUpInside" id="ttM-d5-4rA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVY-Lx-BrM">
+                                <rect key="frame" x="0.0" y="561" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.56078431370000004" green="0.61176470589999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Mqs-yl-sK4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z6p-rA-1s1" secondAttribute="trailing" constant="4" id="2Dy-jx-F2w"/>
+                            <constraint firstItem="Z6p-rA-1s1" firstAttribute="leading" secondItem="nkn-eM-rEg" secondAttribute="trailing" constant="4" id="2Q5-7E-vB2"/>
+                            <constraint firstItem="EPN-GT-At2" firstAttribute="top" secondItem="itV-mo-bVc" secondAttribute="top" id="59E-xF-ulf"/>
+                            <constraint firstItem="pdI-QC-7sb" firstAttribute="top" secondItem="nkn-eM-rEg" secondAttribute="bottom" constant="4" id="9ql-aU-P1x"/>
+                            <constraint firstItem="nkn-eM-rEg" firstAttribute="leading" secondItem="itV-mo-bVc" secondAttribute="leading" constant="4" id="DcJ-s3-Stn"/>
+                            <constraint firstItem="xVY-Lx-BrM" firstAttribute="top" secondItem="EPN-GT-At2" secondAttribute="bottom" id="IyR-yp-1rE"/>
+                            <constraint firstItem="EPN-GT-At2" firstAttribute="leading" secondItem="itV-mo-bVc" secondAttribute="leading" id="QaX-3I-Dez"/>
+                            <constraint firstAttribute="trailing" secondItem="EPN-GT-At2" secondAttribute="trailing" id="Z83-RQ-T4e"/>
+                            <constraint firstItem="xVY-Lx-BrM" firstAttribute="leading" secondItem="itV-mo-bVc" secondAttribute="leading" id="ZLS-x1-P9p"/>
+                            <constraint firstAttribute="trailing" secondItem="xVY-Lx-BrM" secondAttribute="trailing" id="hsT-fH-eqq"/>
+                            <constraint firstItem="nkn-eM-rEg" firstAttribute="top" secondItem="xVY-Lx-BrM" secondAttribute="bottom" constant="4" id="iEp-Nt-5I0"/>
+                            <constraint firstItem="Z6p-rA-1s1" firstAttribute="top" secondItem="xVY-Lx-BrM" secondAttribute="bottom" constant="2" id="tWm-yY-XOx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vGU-1y-Dhv"/>
+                    <connections>
+                        <outlet property="tableView" destination="EPN-GT-At2" id="1Ak-PM-cya"/>
+                        <outlet property="textField" destination="nkn-eM-rEg" id="nCy-zV-5o6"/>
+                        <outlet property="textFieldOffset" destination="9ql-aU-P1x" id="cnc-Zg-bj8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSW-hl-Gc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aWG-5c-7Wx">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="INh-s6-sPA" id="kzz-ly-EcS"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="204" y="407"/>
+        </scene>
+    </scenes>
+</document>
